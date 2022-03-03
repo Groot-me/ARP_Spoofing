@@ -38,7 +38,7 @@ class arp_spoofing:
     def discover_mac_of_host(self):
         # arp discover
         ip_network = sys.argv[1]+"/24"
-        ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst="192.168.1.1/24"),timeout=2)
+        ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=ip_network),timeout=2)
 
 
         #stocking ip address -> MAC in tab
